@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: black;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.App {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.App>textarea {
+  margin: 2rem 0;
+  resize: none;
+  color: rgb(39, 38, 38);
+  font-size: 20px;
+  font-weight: 900;
+  padding: 10px;
+  background-color: grey;
+  outline: none;
+}
+
+.App>h1 {
+  color: rgb(15, 216, 15);
+  font-weight: 900;
+}
+
+.App>h4 {
+  margin-bottom: 1rem;
+  font-size: 25px;
+  color: rgb(15, 216, 15);
+  font-weight: 900;
+}
+
+.App>button {
+  background-color: rgb(15, 216, 15);
+  color: black;
+  padding: 5px 45px;
+  font-weight: 900;
+  font-size: 25px;
+  margin: 30px 0;
+  cursor: pointer;
+}
+
+.App>button:hover {
+  background-color: rgb(33, 206, 33);
+}
