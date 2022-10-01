@@ -6,6 +6,7 @@ function App() {
   const [count, setCount] = React.useState(0);
   const [timeRemaining, setTimeRemaining] = React.useState(5);
   const [timer, setTimer] = React.useState(false);
+  const [startBtn, setStartBtn] = React.useState(false);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setContent({ [name]: value });
@@ -13,6 +14,9 @@ function App() {
 
   const startTimer = () => {
     setTimer(true);
+    setTimeRemaining(5);
+    setCount(0);
+    content.textarea = "";
   };
 
   const countWords = () => {
@@ -34,9 +38,11 @@ function App() {
       setTimeout(() => {
         setTimeRemaining((time) => time - 1);
       }, 1000);
+      setStartBtn(true);
     } else {
       countWords();
       setTimer(false);
+      setStartBtn(false);
     }
   }, [timeRemaining, timer]);
 
@@ -51,7 +57,9 @@ function App() {
         onChange={handleChange}
       />
       <h4>Time remaining: {timeRemaining}</h4>
-      <button onClick={startTimer}>Start</button>
+      <button onClick={startTimer} disabled={startBtn}>
+        Start
+      </button>
       <h1>Word Count: {count}</h1>
     </div>
   );
